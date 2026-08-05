@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>n9cx Portfolio</title><style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#070b18;color:#fff;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 20% 20%,#7c3aed55,transparent 30%),radial-gradient(circle at 80% 40%,#06b6d455,transparent 30%),#070b18;animation:bg 10s linear infinite;z-index:-2}
+@keyframes bg{50%{filter:hue-rotate(90deg)}100%{filter:hue-rotate(360deg)}}
+#particles{position:fixed;inset:0;z-index:-1}
+header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+h1{font-size:4rem;text-shadow:0 0 20px #8b5cf6}p{color:#ccc;margin:15px}
+a.btn{padding:14px 28px;border:1px solid #8b5cf6;border-radius:30px;color:#fff;text-decoration:none;background:#ffffff11;backdrop-filter:blur(12px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;padding:60px;max-width:1400px;margin:auto}
+.card{background:#ffffff10;border:1px solid #ffffff22;border-radius:20px;backdrop-filter:blur(18px);padding:15px;transition:.3s;box-shadow:0 0 25px #0006}
+.card:hover{transform:perspective(800px) rotateX(4deg) rotateY(-4deg) scale(1.03);box-shadow:0 0 30px #8b5cf688}
+video{width:100%;border-radius:12px}h2{margin:10px 0}.stats{display:flex;justify-content:center;gap:40px;padding:60px;flex-wrap:wrap}.box{background:#ffffff10;padding:25px;border-radius:16px}
+footer{text-align:center;padding:40px;color:#aaa}
+</style></head><body><canvas id="particles"></canvas><header><h1>N9cx Portfolio</h1><p>Moje najlepsze realizacje.</p><a class="btn" href="#works">Zobacz prace</a></header><section id="works" class="grid">
+<div class="card"><video controls><source src="portfolio/film1.mp4"></video><h2>Projekt 1</h2></div>
+<div class="card"><video controls><source src="portfolio/film2.mp4"></video><h2>Projekt 2</h2></div>
+<div class="card"><video controls><source src="portfolio/film3.mp4"></video><h2>Projekt 3</h2></div>
+<div class="card"><video controls><source src="portfolio/film4.mp4"></video><h2>Projekt 4</h2></div>
+</section><section class="stats"><div class="box"><h2>100+</h2><p>Projektów</p></div><div class="box"><h2>4</h2><p>Filmy</p></div><div class="box"><h2>24/7</h2><p>Kreatywność</p></div></section><footer>©2026 Portfolio</footer>
+<script>
+const c=document.getElementById("particles"),x=c.getContext("2d");function r(){c.width=innerWidth;c.height=innerHeight}r();onresize=r;let p=[...Array(80)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5),vy:(Math.random()-.5),s:Math.random()*2+1}));(function a(){x.clearRect(0,0,c.width,c.height);x.fillStyle="#8b5cf6";p.forEach(o=>{o.x+=o.vx;o.y+=o.vy;if(o.x<0||o.x>c.width)o.vx*=-1;if(o.y<0||o.y>c.height)o.vy*=-1;x.beginPath();x.arc(o.x,o.y,o.s,0,6.28);x.fill();});requestAnimationFrame(a)})();
+</script></body></html>
